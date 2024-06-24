@@ -27,7 +27,33 @@ Our project leverages advanced techniques to address fake reviews and enhance pr
 - Open the command prompt in project folder then download the required dependencies using ```requirements.txt```
 - Now run the ```app.py``` to start the server copy the url and paste it in the web browser.
 
+## OUTPUT
 
+- Login page
+  ![image](https://github.com/Spraveen8-chary/fake-review-detection/assets/108536707/d6b7e925-9add-4960-9743-739f7e0d86ac)
+
+- Home page
+  ![image](https://github.com/Spraveen8-chary/fake-review-detection/assets/108536707/87fa31bf-da38-476d-b422-6d0c5162c00f)
+
+- Shopping page
+  ![image](https://github.com/Spraveen8-chary/fake-review-detection/assets/108536707/1d3ea92f-5160-45dd-89c1-269b4bfe134c)
+
+- Product information page
+  ![image](https://github.com/Spraveen8-chary/fake-review-detection/assets/108536707/eb9eac66-3c19-4a61-93cd-43ba389e12ce)
+
+- Fake review validation page
+  ![image](https://github.com/Spraveen8-chary/fake-review-detection/assets/108536707/8714bf45-dbd6-4b1b-bc96-c7ec77363e04)
+
+- Product recommendation page
+  ![image](https://github.com/Spraveen8-chary/fake-review-detection/assets/108536707/11aa2ea2-c1fd-420e-9074-ff2b558c516d)
+
+- Review writing page
+  ![image](https://github.com/Spraveen8-chary/fake-review-detection/assets/108536707/0e269539-b25f-4557-bccb-8164299325e3)
+
+- Review updated page
+  ![image](https://github.com/Spraveen8-chary/fake-review-detection/assets/108536707/542705e0-8eb0-48fe-a58f-6421ce7ebdfc)
+
+## Vedio Output
 
 https://github.com/Spraveen8-chary/fake-review-detection/assets/108536707/3d573824-fab6-448c-81c9-62564277413c
 
