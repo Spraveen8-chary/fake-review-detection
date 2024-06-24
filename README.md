@@ -20,5 +20,14 @@ Our project leverages advanced techniques to address fake reviews and enhance pr
 - Update the readme file with any relevant information regarding project development and execution.
 - Deploy the application to a suitable environment for testing or production use.
 
+## Execution Procedure
+- Initially clone the github repo and extract the file.
+- Move to project folder
+- Check the database status, If it's hibernated then resume then our database will be activated.
+- Open the command prompt in project folder then download the required dependencies using ```requirements.txt```
+- Now run the ```app.py``` to start the server copy the url and paste it in the web browser.
+
+
+
 https://github.com/Spraveen8-chary/fake-review-detection/assets/108536707/3d573824-fab6-448c-81c9-62564277413c
 
