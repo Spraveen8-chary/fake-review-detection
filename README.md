@@ -23,6 +23,7 @@ Our project leverages advanced techniques to address fake reviews and enhance pr
 ## Execution Procedure
 - Initially clone the github repo and extract the file.
 - Move to project folder
+- In the project folder extract the ```static.rar``` then all the static files are extracted.
 - Check the database status, If it's hibernated then resume then our database will be activated.
 - Open the command prompt in project folder then download the required dependencies using ```requirements.txt```
 - Now run the ```app.py``` to start the server copy the url and paste it in the web browser.
