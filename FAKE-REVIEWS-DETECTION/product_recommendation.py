@@ -12,16 +12,12 @@ loaded_preds_df = load('preds_df.joblib')
 def predict_for_user(user_id,num_recommendations = 100, U=loaded_U, sigma=loaded_sigma, Vt=loaded_Vt, pivot_df=loaded_pivot_df):
     user_idx = user_id - 1
 
-    # Calculate the predicted ratings for the user
     user_predictions = np.dot(np.dot(U[user_idx, :], sigma), Vt)
     # print(user_predictions)
-    # Create a DataFrame with the product IDs and predicted ratings
     predictions_df = pd.DataFrame({'ProductID': pivot_df.columns, 'PredictedRating': user_predictions})
 
-    # Sort the DataFrame by predicted ratings in descending order
     predictions_df = predictions_df.sort_values(by='PredictedRating', ascending=False)
 
-    # Display the top recommendations for the user
     top_recommendations = predictions_df.head(num_recommendations)
     return top_recommendations
 
@@ -56,7 +52,7 @@ def recommends(r):
 
 
 if __name__ == '__main__':
-    # Example: Make predictions for a specific user
+   
     user_id_to_predict = 5
 
     predictions = predict_for_user(user_id_to_predict)
