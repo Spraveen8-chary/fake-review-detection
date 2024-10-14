@@ -84,13 +84,13 @@ def get_image_value(product_id):
     return jsonify(values)
 
 click_count = 0
-recommendation_position = 0  # Initialize the position in the recommendation list
+recommendation_position = 0 
 next_recommendations =''
 @app.route('/get_product_details/<product_id>')
 def get_product_details(product_id):
     global click_count, recommendation_position, next_recommendations
 
-    click_count += 1  # Increase the click count every time the function is called
+    click_count += 1  
     print(click_count)
     product = next((p for p in product_details if p['reference'] == product_id), None)
 
