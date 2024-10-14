@@ -5,7 +5,6 @@ from cassandra.query import SimpleStatement
 from cassandra import ConsistencyLevel
 import json
 
-# Load configuration and secrets
 cloud_config = {
     'secure_connect_bundle': 'secure-connect-electronics-ecommerce.zip'
 }
@@ -16,21 +15,18 @@ with open("Electronics_ecommerce-token.json") as f:
 CLIENT_ID = secrets["clientId"]
 CLIENT_SECRET = secrets["secret"]
 
-# Set up authentication provider
 auth_provider = PlainTextAuthProvider(CLIENT_ID, CLIENT_SECRET)
 
-# Connect to the Cassandra cluster
 cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
 session = cluster.connect()
 
 keyspace_name = 'database'
 
-# Using the specified keyspace
 session.execute(f"USE {keyspace_name}")
 
 
 def create_tables():
-    # Create 'register' table if it does not exist
+
     create_register_table = """
     CREATE TABLE IF NOT EXISTS register (
         id INT PRIMARY KEY,
@@ -48,11 +44,10 @@ def create_tables():
 
 
 def register_account(fname, lname, email, password,ids):
-    # Concatenate first and last names to create the full name
+
     name = f"{fname} {lname}"
     hashed_password = hashlib.sha256(password.encode()).hexdigest()
     try:
-        # Insert user details into the 'register' table
         session.execute(
             "INSERT INTO register (id ,name, email, password) VALUES (%s,%s, %s, %s)",
             (ids, name, email, hashed_password)
@@ -62,14 +57,12 @@ def register_account(fname, lname, email, password,ids):
         print(f"Failed to register account. Error: {e}")
 
 def login(email, password):
-    # Hash the provided password for comparison
     hashed_password = hashlib.sha256(password.encode()).hexdigest()
     result = session.execute(
         "SELECT email, password FROM register WHERE email = %s",
         (email,)
     )
     for row in result:
-        # Compare hashed passwords for authentication
         if row.password == hashed_password:
             return True
     return False
@@ -78,7 +71,7 @@ def login(email, password):
 def get_name(email):
     result = session.execute("SELECT name,email FROM register WHERE email = %s", (email,))
     if not result:
-        return None  # No results found
+        return None  
 
     for row in result:
         return row.name
